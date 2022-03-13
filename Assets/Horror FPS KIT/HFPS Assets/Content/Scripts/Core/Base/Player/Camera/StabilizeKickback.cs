@@ -8,6 +8,7 @@ public class StabilizeKickback : MonoBehaviour
 
     void LateUpdate()
     {
+
         myTransform.localRotation = Quaternion.Slerp(myTransform.localRotation, Quaternion.identity, Time.deltaTime * returnSpeed);
     }
 }
