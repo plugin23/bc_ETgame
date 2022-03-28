@@ -15,7 +15,8 @@ public class StabilizeKickback : MonoBehaviour
         GazePoint gazePoint = TobiiAPI.GetGazePoint();
         //Vector3 cameraVector = gazePoint;
         //Camera.main.ScreenToWorldPoint(gazePoint)
-        Vector3 newGazePoint = new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, 1);
+        //Vector3 newGazePoint = new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, 1);
+        Vector3 newGazePoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(newGazePoint);
         Vector3 direction = worldPoint - myTransform.position;
         Debug.DrawRay(myTransform.position, direction, Color.red);
@@ -26,6 +27,7 @@ public class StabilizeKickback : MonoBehaviour
         myTransform.localRotation = Quaternion.Slerp(myTransform.localRotation, target, Time.deltaTime * returnSpeed);*/
         if (Input.GetKeyUp(KeyCode.L))
         {
+            mySphere.position = worldPoint;
             Debug.Log(direction);
         }
 
