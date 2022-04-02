@@ -69330,6 +69330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: mySphere
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082604779300066807, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: mySphere
+      value: 
       objectReference: {fileID: 947999214}
     - target: {fileID: 8082562773487164737, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
         type: 3}
