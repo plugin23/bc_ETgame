@@ -27683,6 +27683,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 910314086}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &918712252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918712253}
+  - component: {fileID: 918712254}
+  m_Layer: 0
+  m_Name: Eyetracking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &918712253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918712252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 949118299}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918712254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918712252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebbbc8ccf140634bb79038b9fe30ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeTracking: 0
+  worldPoint: {x: 0, y: 0, z: 0}
+  viewportPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &918823692
 GameObject:
   m_ObjectHideFlags: 0
@@ -28919,12 +28965,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947999210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &949118299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8192918746961193697, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3280170039856503564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &952483890
 GameObject:
   m_ObjectHideFlags: 0
@@ -69249,6 +69301,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.0000038146977
       objectReference: {fileID: 0}
+    - target: {fileID: 7189453346456579496, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: Eyetracking
+      value: 
+      objectReference: {fileID: 918712252}
     - target: {fileID: 8082357754831447127, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
         type: 3}
       propertyPath: Health
@@ -69274,6 +69331,31 @@ PrefabInstance:
       propertyPath: mySphere
       value: 
       objectReference: {fileID: 947999214}
+    - target: {fileID: 8082562773487164737, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082562773487164737, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: Eyetracking
+      value: 
+      objectReference: {fileID: 918712252}
+    - target: {fileID: 8082562773487164737, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: eyeTrackingObject
+      value: 
+      objectReference: {fileID: 918712252}
+    - target: {fileID: 8082604779300066807, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: mySphere
+      value: 
+      objectReference: {fileID: 947999214}
+    - target: {fileID: 8082604779300066807, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: eyeTrackingObject
+      value: 
+      objectReference: {fileID: 918712252}
     - target: {fileID: 8082745574231376271, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
         type: 3}
       propertyPath: m_GameManager
@@ -69338,6 +69420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HEROPLAYER
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196300077291511239, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8440501289069738337, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
         type: 3}

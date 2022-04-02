@@ -28,6 +28,7 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
     private Animator weaponAnim;
     private Transform weaponRoot;
 
+    public GameObject eyeTrackingObject;
     public WeaponType weaponType = WeaponType.Semi;
 
     [Header("Inventory")]
@@ -140,6 +141,7 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
         playerFunctions = scriptManager.GetScript<PlayerFunctions>();
         mainCamera = scriptManager.MainCamera;
 
+        
         hipPosition = weaponAnim.transform.localPosition;
         distVector = hipPosition;
 
