@@ -24,11 +24,13 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
     private PlayerFunctions playerFunctions;
     private Inventory inventory;
     private Transform Player;
+    public GameObject eyeTrackingObject;
 
     private Animator weaponAnim;
     private Transform weaponRoot;
 
-    public GameObject eyeTrackingObject;
+    EyeTracking eyeTracking;
+
     public WeaponType weaponType = WeaponType.Semi;
 
     [Header("Inventory")]
@@ -41,7 +43,7 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
     public float shootRange = 250.0f;
     public float hitforce = 20.0f;
     public float fireRate = 0.1f;
-    public float recoil = 0.1f;
+    public float recoil = 0f;
 
     [Header("NPC Sound Reaction")]
     public LayerMask soundReactionMask;
@@ -140,8 +142,8 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
         Player = PlayerController.Instance.transform;
         playerFunctions = scriptManager.GetScript<PlayerFunctions>();
         mainCamera = scriptManager.MainCamera;
+        eyeTracking = eyeTrackingObject.GetComponent<EyeTracking>();
 
-        
         hipPosition = weaponAnim.transform.localPosition;
         distVector = hipPosition;
 
@@ -362,9 +364,13 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
         {
             float width = Random.Range(-1f, 1f) * recoil;
             float height = Random.Range(-1f, 1f) * recoil;
+
             //AIM TRANSFORM POSITION
-            Vector3 spray = mainCamera.transform.forward + mainCamera.transform.right * width + mainCamera.transform.up * height;
-            Ray aim = new Ray(mainCamera.transform.position, spray.normalized);
+            //Vector3 spray = mainCamera.transform.forward + mainCamera.transform.right * width + mainCamera.transform.up * height;
+            //Ray aim = new Ray(mainCamera.transform.position, spray.normalized);
+            Vector3 worldPoint = eyeTracking.worldPoint;
+            Vector3 direction = worldPoint - mainCamera.transform.position;
+            Ray aim = new Ray(mainCamera.transform.position, direction);
 
             if (Physics.Raycast(aim, out hit, shootRange, layerMask))
             {

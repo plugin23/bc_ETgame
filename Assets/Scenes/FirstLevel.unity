@@ -27726,7 +27726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebbbc8ccf140634bb79038b9fe30ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeTracking: 0
+  eyeTracking: 1
   worldPoint: {x: 0, y: 0, z: 0}
   viewportPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &918823692
@@ -69306,6 +69306,11 @@ PrefabInstance:
       propertyPath: Eyetracking
       value: 
       objectReference: {fileID: 918712252}
+    - target: {fileID: 7189453346456579496, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
+        type: 3}
+      propertyPath: eyeTrackingObject
+      value: 
+      objectReference: {fileID: 918712252}
     - target: {fileID: 8082357754831447127, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
         type: 3}
       propertyPath: Health
@@ -69331,11 +69336,6 @@ PrefabInstance:
       propertyPath: mySphere
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8082604779300066807, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
-        type: 3}
-      propertyPath: mySphere
-      value: 
-      objectReference: {fileID: 947999214}
     - target: {fileID: 8082562773487164737, guid: 9f256dcdfd91e854ab8e4a9f62248d1e,
         type: 3}
       propertyPath: m_Enabled
