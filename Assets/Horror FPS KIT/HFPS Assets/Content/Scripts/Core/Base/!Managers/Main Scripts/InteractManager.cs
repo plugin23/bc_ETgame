@@ -24,6 +24,8 @@ public class InteractManager : MonoBehaviour {
     private InteractiveItem interactItem;
     private UIObjectInfo objectInfo;
     private DraggableObject dragRigidbody;
+    public GameObject eyeTrackingObject;
+    EyeTracking eyeTracking;
 
     [Header("Raycast")]
 	public float RaycastRange = 3;
@@ -77,6 +79,7 @@ public class InteractManager : MonoBehaviour {
         gameManager = HFPS_GameManager.Instance;
         mainCamera = ScriptManager.Instance.MainCamera;
         itemSelector = ScriptManager.Instance.GetScript<ItemSwitcher>();
+        eyeTracking = eyeTrackingObject.GetComponent<EyeTracking>();
 
         CrosshairUI = gameManager.Crosshair;
         default_interactCrosshair = interactCrosshair;
@@ -107,7 +110,8 @@ public class InteractManager : MonoBehaviour {
         }
 
         //ray na pick itemu
-        Ray playerAim = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        //Ray playerAim = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray playerAim = mainCamera.ViewportPointToRay(eyeTracking.viewportPoint);
 
         if (Physics.Raycast(playerAim, out RaycastHit hit, RaycastRange, cullLayers))
         {

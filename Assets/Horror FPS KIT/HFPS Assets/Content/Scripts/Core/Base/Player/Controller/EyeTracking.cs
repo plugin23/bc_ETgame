@@ -7,6 +7,7 @@ public class EyeTracking : MonoBehaviour
 {
 
     public bool eyeTracking = false;
+    public Vector2 screenPoint;
     public Vector3 worldPoint;
     public Vector3 viewportPoint;
 
@@ -15,10 +16,11 @@ public class EyeTracking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        positionX = Screen.width / 2;
-        positionY = Screen.height / 2;
+        positionX = 30;
+        positionY = 300;
         positionZ = 1;
         Vector3 SimulatedGazePoint = new Vector3(positionX, positionY, positionZ);
+        screenPoint = new Vector2(positionX, positionY);
         worldPoint = Camera.main.ScreenToWorldPoint(SimulatedGazePoint);
         viewportPoint = Camera.main.WorldToViewportPoint(worldPoint);
     }
@@ -46,6 +48,7 @@ public class EyeTracking : MonoBehaviour
             }
 
             Vector3 SimulatedGazePoint = new Vector3(positionX, positionY, 1);
+            screenPoint = new Vector2(positionX, positionY);
             worldPoint = Camera.main.ScreenToWorldPoint(SimulatedGazePoint);
             viewportPoint = Camera.main.WorldToViewportPoint(worldPoint);
         }
