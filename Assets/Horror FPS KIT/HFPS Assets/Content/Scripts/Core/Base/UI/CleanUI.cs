@@ -34,11 +34,6 @@ public class CleanUI : MonoBehaviour
         UIObjects.Add(UI_Ammo);
         UIObjects.Add(ObjectiveParent);
 
-        foreach (GameObject gameObj in UIObjects)
-        {
-            StartCoroutine(fadeInAndOut(gameObj, false, gameObj.GetComponent<CanvasGroup>().alpha, 6f));
-            Debug.Log(gameObj.GetComponent<CanvasGroup>().alpha);
-        }
         pointerEventData = new PointerEventData(eventSystem);
     }
 
@@ -49,9 +44,9 @@ public class CleanUI : MonoBehaviour
         ammoGroup = UI_Ammo.GetComponent<CanvasGroup>();
         objectiveGroup = ObjectiveParent.GetComponent<CanvasGroup>();
 
-        healthGroup.alpha = 1f;
-        ammoGroup.alpha = 1f;
-        objectiveGroup.alpha = 1f;
+        healthGroup.alpha = 0.2f;
+        ammoGroup.alpha = 0.2f;
+        objectiveGroup.alpha = 0.2f;
         
     }
 
@@ -76,36 +71,10 @@ public class CleanUI : MonoBehaviour
         {
             counter += Time.deltaTime;
             float alpha = Mathf.Lerp(a, b, counter / duration);
-            Debug.Log(alpha);
             objectToFade.GetComponent<CanvasGroup>().alpha = alpha;
-            if (fadeIn)
-            {
-                yield return new WaitForSeconds(5);
-            }
-            else
-            {
-                yield return null;
-            }
-            
+            yield return null;
         }
 
-    }
-
-    void FadeIn(CanvasGroup group)
-    {
-        while(group.alpha < 1)
-        {
-            group.alpha += 0.00000001f;
-        }
-
-    }
-
-    void FadeOut(CanvasGroup group)
-    {
-        while(group.alpha > 0.2f)
-        {
-            group.alpha -= 0.02f;
-        }
     }
 
     // Update is called once per frame
@@ -114,26 +83,39 @@ public class CleanUI : MonoBehaviour
         pointerEventData.position = eyeTracking.screenPoint;
         raycastResults = new List<RaycastResult>();
         rayCaster.Raycast(pointerEventData, raycastResults);
-        
+
+        Coroutine fadeRoutine = null;
+        GameObject parentObject = null;
+
         //Debug.Log(pointerEventData);
         foreach (RaycastResult result in raycastResults)
         {
             //Debug.Log(result);
-            GameObject parentObject = result.gameObject.transform.parent.gameObject;
+            parentObject = result.gameObject.transform.parent.gameObject;
             if (UIObjects.Contains(parentObject))
             {
                 //Debug.Log(parentObject.name);
-                StartCoroutine(fadeInAndOut(parentObject, true, parentObject.GetComponent<CanvasGroup>().alpha, 1f));
-                StartCoroutine(fadeInAndOut(parentObject, false, parentObject.GetComponent<CanvasGroup>().alpha, 1f));
-                //fadeInAndOut(parentObject, false, 1f);
+                if(fadeRoutine != null) {
+                    StopCoroutine(fadeRoutine);
+                    fadeRoutine = null;
+                }
+                StartCoroutine(fadeInAndOut(parentObject, true, parentObject.GetComponent<CanvasGroup>().alpha, 10f));
+            }   
+        }
+
+        if (fadeRoutine == null)
+        {
+            foreach(GameObject gameObj in UIObjects)
+            {
+                if(gameObj.GetComponent<CanvasGroup>().alpha > 0.2f)
+                {
+                    Debug.Log(gameObj.name + " " + gameObj.GetComponent<CanvasGroup>().alpha);
+                    StartCoroutine(fadeInAndOut(gameObj, false, gameObj.GetComponent<CanvasGroup>().alpha, 5f));
+                }
+                
             }
             
         }
-
-        /*foreach(GameObject gameObj in UIObjects)
-        {
-            FadeOut(gameObj.GetComponent<CanvasGroup>());
-        }*/
         
     }
 }
