@@ -16,8 +16,8 @@ public class EyeTracking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        positionX = 30;
-        positionY = 300;
+        positionX = Screen.width / 2;
+        positionY = Screen.height / 2;
         positionZ = 1;
         Vector3 SimulatedGazePoint = new Vector3(positionX, positionY, positionZ);
         screenPoint = new Vector2(positionX, positionY);

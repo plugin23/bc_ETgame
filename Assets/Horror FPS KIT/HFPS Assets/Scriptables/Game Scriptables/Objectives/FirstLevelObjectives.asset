@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9de9e24370cd9041b348027f19b6140, type: 3}
-  m_Name: Showcase Objectives
+  m_Name: FirstLevelObjectives
   m_EditorClassIdentifier: 
   Objectives:
   - shortName: TakeGun

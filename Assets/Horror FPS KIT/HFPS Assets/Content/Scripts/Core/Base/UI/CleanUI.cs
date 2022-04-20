@@ -11,6 +11,8 @@ public class CleanUI : MonoBehaviour
     public GameObject ObjectiveParent;
     public GameObject eyeTrackingObject;
 
+    private Coroutine fadeRoutine;
+
     GraphicRaycaster rayCaster;
     PointerEventData pointerEventData;
     EventSystem eventSystem;
@@ -29,6 +31,7 @@ public class CleanUI : MonoBehaviour
         rayCaster = GetComponent<GraphicRaycaster>();
         eventSystem = GetComponent<EventSystem>();
         UIObjects = new List<GameObject>();
+        fadeRoutine = null;
 
         UIObjects.Add(UI_Health);
         UIObjects.Add(UI_Ammo);
@@ -75,6 +78,7 @@ public class CleanUI : MonoBehaviour
             yield return null;
         }
 
+        fadeRoutine = null;
     }
 
     // Update is called once per frame
@@ -84,7 +88,6 @@ public class CleanUI : MonoBehaviour
         raycastResults = new List<RaycastResult>();
         rayCaster.Raycast(pointerEventData, raycastResults);
 
-        Coroutine fadeRoutine = null;
         GameObject parentObject = null;
 
         //Debug.Log(pointerEventData);
@@ -99,7 +102,7 @@ public class CleanUI : MonoBehaviour
                     StopCoroutine(fadeRoutine);
                     fadeRoutine = null;
                 }
-                StartCoroutine(fadeInAndOut(parentObject, true, parentObject.GetComponent<CanvasGroup>().alpha, 10f));
+                fadeRoutine = StartCoroutine(fadeInAndOut(parentObject, true, parentObject.GetComponent<CanvasGroup>().alpha, 1f));
             }   
         }
 
@@ -110,9 +113,13 @@ public class CleanUI : MonoBehaviour
                 if(gameObj.GetComponent<CanvasGroup>().alpha > 0.2f)
                 {
                     Debug.Log(gameObj.name + " " + gameObj.GetComponent<CanvasGroup>().alpha);
-                    StartCoroutine(fadeInAndOut(gameObj, false, gameObj.GetComponent<CanvasGroup>().alpha, 5f));
+                    if(fadeRoutine == null)
+                    {
+                        fadeRoutine = StartCoroutine(fadeInAndOut(gameObj, false, gameObj.GetComponent<CanvasGroup>().alpha, 0.5f));
+                    }
+                    
                 }
-                
+ 
             }
             
         }
