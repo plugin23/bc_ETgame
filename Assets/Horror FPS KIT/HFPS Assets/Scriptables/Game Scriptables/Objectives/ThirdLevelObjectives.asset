@@ -18,28 +18,48 @@ MonoBehaviour:
     objectiveText: Zober si zbran s nabojmi
     completeCount: 4
     objectiveID: 0
-  - shortName: KillFirstEnemy
-    eventID: FirstKill
-    objectiveText: Zneskodni nepriatela pred rebrikom
+  - shortName: FindLadder
+    eventID: LadderFound
+    objectiveText: Najdi spravne dvere a chod k rebriku.
     completeCount: 1
     objectiveID: 1
-  - shortName: SecondArea
-    eventID: GotToSecondArea
-    objectiveText: Dostan sa cez rebrik na druhu stranu areny
-    completeCount: 0
+  - shortName: KillLadderEnemies
+    eventID: LadderEnemiesDead
+    objectiveText: Zneskodni nepriatelov po ceste
+    completeCount: 2
     objectiveID: 2
-  - shortName: KillEnemies
-    eventID: KilledEnemies
-    objectiveText: Zneskodni nepriatelov a zober kluc
-    completeCount: 4
+  - shortName: HealArea
+    eventID: AtHealArea
+    objectiveText: Dopln si zivoty na druhej strane rebrika
+    completeCount: 1
     objectiveID: 3
-  - shortName: EnterEndArea
-    eventID: EnteredEndArea
-    objectiveText: Vojdi do miestnosti.
+  - shortName: CardDoor
+    eventID: UnlockedCardDoor
+    objectiveText: Odomkni dvere pomocou karty.
     completeCount: 0
     objectiveID: 4
+  - shortName: KillSecondLadderEnemies
+    eventID: KilledSecondLadderEnemies
+    objectiveText: Zneskodni nepriatelov a pokracuj dalej
+    completeCount: 4
+    objectiveID: 5
+  - shortName: AmmoArea
+    eventID: AtAmmoArea
+    objectiveText: Za mostom dopln municiu a zivoty
+    completeCount: 1
+    objectiveID: 6
+  - shortName: SecondLevelArea
+    eventID: AtSecondLevelArea
+    objectiveText: Pokracuj k dalsim nepriatelom
+    completeCount: 0
+    objectiveID: 7
+  - shortName: KillSecondAreaEnemies
+    eventID: KilledSecondAreaEnemies
+    objectiveText: Zneskodni nepriatelov a pokracuj dalej
+    completeCount: 0
+    objectiveID: 8
   - shortName: EndLevel
     eventID: ExitScene
     objectiveText: Chod na koniec chodby
     completeCount: 0
-    objectiveID: 5
+    objectiveID: 9
