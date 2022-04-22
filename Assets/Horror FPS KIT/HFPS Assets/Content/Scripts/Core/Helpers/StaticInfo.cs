@@ -11,6 +11,8 @@ public class StaticInfo : MonoBehaviour
     public static bool tracking { get; set; }
     public static DateTime levelStart { get; set; }
     public static DateTime levelEnd { get; set; }
+    public static int shots { get; set; }
+    public static int hitShots { get; set; }
     public static FileStream timeFile { get; set; }
     public static StreamWriter sw { get; set; }
 
@@ -18,6 +20,8 @@ public class StaticInfo : MonoBehaviour
     {
         timeFile = null;
         sw = null;
+        shots = 0;
+        hitShots = 0;
         DontDestroyOnLoad(this);
     }
 

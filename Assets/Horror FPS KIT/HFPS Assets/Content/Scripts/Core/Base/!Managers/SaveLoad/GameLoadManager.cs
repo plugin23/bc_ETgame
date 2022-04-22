@@ -268,6 +268,7 @@ public class GameLoadManager : MonoBehaviour
                     //StaticInfo.sw = File.AppendText(StaticInfo.timeFile.Name);
                     StaticInfo.sw.WriteLine(StaticInfo.getDuration().ToString());
                     StaticInfo.sw.WriteLine(sceneBuildName);
+                    StaticInfo.sw.WriteLine(StaticInfo.hitShots.ToString() + "/" + StaticInfo.shots.ToString());
                 }
                 catch (Exception ex)
                 {

@@ -360,6 +360,7 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
 
         weaponAnim.SetTrigger(fireAnim);
 
+        StaticInfo.shots++;
         for (int i = 0; i < bulletsPerShot; i++)
         {
             float width = Random.Range(-1f, 1f) * recoil;
@@ -414,8 +415,8 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
 
         if(surface.SurfaceBulletmark && surface.allowImpactMark)
         {
+            
             float rScale = Random.Range(0.5f, 1.0f);
-
             if (surface.SurfaceTag != FleshTag)
             {
                 GameObject bulletMark = Instantiate(surface.SurfaceBulletmark, hitPosition, hitRotation);
@@ -425,6 +426,7 @@ public class WeaponController : SwitcherBehaviour, ISaveableArmsItem, IOnAnimato
             }
             else
             {
+                StaticInfo.hitShots++;
                 Instantiate(surface.SurfaceBulletmark, hitPosition, hitRotation);
             }
 
