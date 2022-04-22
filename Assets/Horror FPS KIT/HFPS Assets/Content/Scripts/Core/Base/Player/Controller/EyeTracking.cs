@@ -16,7 +16,7 @@ public class EyeTracking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        eyeTracking = EyeTrackingEnabled.tracking;
+        eyeTracking = StaticInfo.tracking;
         Debug.Log(eyeTracking);
         positionX = Screen.width / 2;
         positionY = Screen.height / 2;

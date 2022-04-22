@@ -12,6 +12,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using HFPS.Prefs;
 using ThunderWire.Helpers;
+using System;
 
 /// <summary>
 /// Provides additional methods for Save/Load System.
@@ -53,6 +54,7 @@ public class GameLoadManager : MonoBehaviour
         {
             LoadSaves();
         }
+        StaticInfo.setFile();
     }
 
     public async void LoadSaves()
@@ -244,6 +246,51 @@ public class GameLoadManager : MonoBehaviour
             Prefs.Game_SaveName(string.Empty);
             Prefs.Game_LevelName(sceneBuildName);
 
+
+            if (sceneBuildName == "FirstLevel")
+            {
+                try
+                {
+                    //StreamWriter swriterLevel = new StreamWriter(StaticInfo.timeFile.Name);
+                    StaticInfo.levelStart = DateTime.Now;
+                    StaticInfo.sw.WriteLine(sceneBuildName);
+                }
+                catch (Exception ex)
+                {
+                    ex = new Exception("An error has occurred!!", ex);
+                    Debug.Log("FirstLevel" + ex);
+                };
+            }
+            else if (sceneBuildName == "MainMenu")
+            {
+                try
+                {
+                    //StaticInfo.sw = File.AppendText(StaticInfo.timeFile.Name);
+                    StaticInfo.sw.WriteLine(StaticInfo.getDuration().ToString());
+                    StaticInfo.sw.WriteLine(sceneBuildName);
+                }
+                catch (Exception ex)
+                {
+                    ex = new Exception("An error has occurred!!", ex);
+                    Debug.Log("MainMenu" + ex);
+                };
+            }
+            else
+            {
+                try
+                {
+                    //StreamWriter swriterLevel = new StreamWriter(StaticInfo.timeFile.Name);
+                    StaticInfo.sw.WriteLine(StaticInfo.getDuration().ToString());
+                    StaticInfo.sw.WriteLine(sceneBuildName);
+                    StaticInfo.levelStart = DateTime.Now;
+                }
+                catch (Exception ex)
+                {
+                    ex = new Exception("An error has occurred!!", ex);
+                };
+
+            }
+
             SceneManager.LoadScene(1);
         }
         else
@@ -254,6 +301,7 @@ public class GameLoadManager : MonoBehaviour
 
     public void Quit()
     {
+        StaticInfo.timeFile.Close();
         Application.Quit();
     }
 }
