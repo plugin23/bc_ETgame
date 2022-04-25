@@ -31,7 +31,7 @@ MonoBehaviour:
   - shortName: HealArea
     eventID: AtHealArea
     objectiveText: Dopln si zivoty na druhej strane rebrika
-    completeCount: 1
+    completeCount: 2
     objectiveID: 3
   - shortName: CardDoor
     eventID: UnlockedCardDoor
@@ -46,20 +46,20 @@ MonoBehaviour:
   - shortName: AmmoArea
     eventID: AtAmmoArea
     objectiveText: Za mostom dopln municiu a zivoty
-    completeCount: 1
+    completeCount: 2
     objectiveID: 6
   - shortName: SecondLevelArea
     eventID: AtSecondLevelArea
-    objectiveText: Pokracuj k dalsim nepriatelom
-    completeCount: 0
+    objectiveText: Pokracuj a odomkni dvere. Pozor na nepriatelov
+    completeCount: 3
     objectiveID: 7
   - shortName: KillSecondAreaEnemies
     eventID: KilledSecondAreaEnemies
-    objectiveText: Zneskodni nepriatelov a pokracuj dalej
-    completeCount: 0
+    objectiveText: Zneskodni nepriatelov
+    completeCount: 5
     objectiveID: 8
   - shortName: EndLevel
     eventID: ExitScene
-    objectiveText: Chod na koniec chodby
+    objectiveText: Vela stastia! Chod na koniec urovne
     completeCount: 0
     objectiveID: 9

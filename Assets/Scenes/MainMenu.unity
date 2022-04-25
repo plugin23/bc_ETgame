@@ -598,6 +598,11 @@ PrefabInstance:
       propertyPath: NewGameBuildName
       value: FirstLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 6567529605440481854, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: GameOptionsPC.Array.data[0].OptionObjects.Array.data[1].DefaultValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6567529605440481855, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
         type: 3}
       propertyPath: currentTab
