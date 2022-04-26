@@ -58,6 +58,7 @@ public class EyeTracking : MonoBehaviour
         {
             GazePoint gazePoint = TobiiAPI.GetGazePoint();
             Vector3 eyetrackingGazePoint = new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, 1);
+            screenPoint = new Vector2(gazePoint.Screen.x, gazePoint.Screen.y);
             worldPoint = Camera.main.ScreenToWorldPoint(eyetrackingGazePoint);
             viewportPoint = Camera.main.WorldToViewportPoint(worldPoint);
         }
