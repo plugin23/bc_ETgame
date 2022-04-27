@@ -68893,6 +68893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8e66be0c813b54fa47207efea118fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eyeTrackingObject: {fileID: 918712252}
   Player: {fileID: 6646213808216673465}
   m_sceneLoader: SceneLoader
   CurrentScene:

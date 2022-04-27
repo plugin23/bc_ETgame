@@ -33,6 +33,8 @@ public class HFPS_GameManager : Singleton<HFPS_GameManager> {
     private CutsceneManager cutscene;
     private ScriptManager scriptManager;
     private Inventory inventory;
+    public GameObject eyeTrackingObject;
+    private EyeTracking eyeTracking;
 
     [Header("Main")]
     public GameObject Player;
@@ -161,6 +163,7 @@ public class HFPS_GameManager : Singleton<HFPS_GameManager> {
         saveHandler = GetComponent<SaveGameHandler>();
         inventory = GetComponent<Inventory>();
         cutscene = GetComponent<CutsceneManager>();
+        eyeTracking = eyeTrackingObject.GetComponent<EyeTracking>();
 
         if (scriptManager.ArmsCamera.GetComponent<PostProcessVolume>())
         {
@@ -256,6 +259,7 @@ public class HFPS_GameManager : Singleton<HFPS_GameManager> {
     void Update()
     {
         transform.SetSiblingIndex(0);
+        Crosshair.transform.position = eyeTracking.screenPoint;
 
         if (crossPlatformInput.inputsLoaded)
         {

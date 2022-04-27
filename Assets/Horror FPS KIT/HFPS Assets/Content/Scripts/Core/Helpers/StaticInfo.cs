@@ -35,7 +35,7 @@ public class StaticInfo : MonoBehaviour
     {
         if (timeFile == null)
         {
-            timeFile = new FileStream(@"Assets\Time_Stamp.txt", FileMode.Append, FileAccess.Write);
+            timeFile = new FileStream(@"Time_Stamp.txt", FileMode.Append, FileAccess.Write);
             sw = new StreamWriter(timeFile);
             sw.AutoFlush = true;
         }

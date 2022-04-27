@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44706422, g: 0.49696684, b: 0.57509214, a: 1}
+  m_IndirectSpecularColor: {r: 0.06723818, g: 0.12410527, b: 0.22143278, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24022,6 +24022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8e66be0c813b54fa47207efea118fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eyeTrackingObject: {fileID: 312724169}
   Player: {fileID: 1847451490}
   m_sceneLoader: SceneLoader
   CurrentScene:
