@@ -47,9 +47,18 @@ public class CleanUI : MonoBehaviour
         ammoGroup = UI_Ammo.GetComponent<CanvasGroup>();
         objectiveGroup = ObjectiveParent.GetComponent<CanvasGroup>();
 
-        healthGroup.alpha = 0.2f;
-        ammoGroup.alpha = 0.2f;
-        objectiveGroup.alpha = 0.2f;
+        if (StaticInfo.tracking)
+        {
+            healthGroup.alpha = 0.2f;
+            ammoGroup.alpha = 0.2f;
+            objectiveGroup.alpha = 0.2f;
+        }
+        else
+        {
+            healthGroup.alpha = 1f;
+            ammoGroup.alpha = 1f;
+            objectiveGroup.alpha = 1f;
+        }
         
     }
 
@@ -90,14 +99,11 @@ public class CleanUI : MonoBehaviour
 
         GameObject parentObject = null;
 
-        //Debug.Log(pointerEventData);
         foreach (RaycastResult result in raycastResults)
         {
-            //Debug.Log(result);
             parentObject = result.gameObject.transform.parent.gameObject;
             if (UIObjects.Contains(parentObject))
             {
-                //Debug.Log(parentObject.name);
                 if(fadeRoutine != null) {
                     StopCoroutine(fadeRoutine);
                     fadeRoutine = null;

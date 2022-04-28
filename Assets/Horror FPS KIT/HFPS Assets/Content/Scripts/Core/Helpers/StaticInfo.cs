@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class StaticInfo : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public static bool tracking { get; set; }
     public static DateTime levelStart { get; set; }
