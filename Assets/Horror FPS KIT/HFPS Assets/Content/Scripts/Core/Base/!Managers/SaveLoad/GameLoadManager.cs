@@ -251,8 +251,8 @@ public class GameLoadManager : MonoBehaviour
             {
                 try
                 {
-                    //StreamWriter swriterLevel = new StreamWriter(StaticInfo.timeFile.Name);
                     StaticInfo.levelStart = DateTime.Now;
+                    StaticInfo.sw.WriteLine(StaticInfo.tracking);
                     StaticInfo.sw.WriteLine(sceneBuildName);
                 }
                 catch (Exception ex)
@@ -265,7 +265,6 @@ public class GameLoadManager : MonoBehaviour
             {
                 try
                 {
-                    //StaticInfo.sw = File.AppendText(StaticInfo.timeFile.Name);
                     StaticInfo.sw.WriteLine(StaticInfo.getDuration().ToString());
                     StaticInfo.sw.WriteLine(sceneBuildName);
                     StaticInfo.sw.WriteLine(StaticInfo.hitShots.ToString() + "/" + StaticInfo.shots.ToString());
@@ -280,7 +279,6 @@ public class GameLoadManager : MonoBehaviour
             {
                 try
                 {
-                    //StreamWriter swriterLevel = new StreamWriter(StaticInfo.timeFile.Name);
                     StaticInfo.sw.WriteLine(StaticInfo.getDuration().ToString());
                     StaticInfo.sw.WriteLine(sceneBuildName);
                     StaticInfo.levelStart = DateTime.Now;
