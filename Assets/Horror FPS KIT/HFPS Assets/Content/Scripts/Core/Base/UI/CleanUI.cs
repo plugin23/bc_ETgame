@@ -112,13 +112,12 @@ public class CleanUI : MonoBehaviour
             }   
         }
 
-        if (fadeRoutine == null)
+        if (fadeRoutine == null && StaticInfo.tracking)
         {
             foreach(GameObject gameObj in UIObjects)
             {
                 if(gameObj.GetComponent<CanvasGroup>().alpha > 0.2f)
                 {
-                    Debug.Log(gameObj.name + " " + gameObj.GetComponent<CanvasGroup>().alpha);
                     if(fadeRoutine == null)
                     {
                         fadeRoutine = StartCoroutine(fadeInAndOut(gameObj, false, gameObj.GetComponent<CanvasGroup>().alpha, 0.5f));

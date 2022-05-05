@@ -1,7 +1,0 @@
-FirstLevel
-FirstLevel
-FirstLevel
-00:01:14.1307853
-SecondLevel
-00:01:19.3650343
-ThirdLevel
