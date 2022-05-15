@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -203,6 +203,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 877931249929873866, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_Name
+      value: SecondLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931249929873869, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: SecondLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 877931250006458201, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -227,6 +237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnApply.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Showcase
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931250658309969, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_Text
+      value: Prva uroven
       objectReference: {fileID: 0}
     - target: {fileID: 877931250670023139, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
         type: 3}
@@ -408,6 +423,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 877931251242273938, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_Name
+      value: FirstLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931251242273939, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: FirstLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931251297884490, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_Name
+      value: ThirdLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931251297884492, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ThirdLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931251359622514, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_Text
+      value: UROVNE
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931251821031356, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_Text
+      value: Tretia uroven
+      objectReference: {fileID: 0}
     - target: {fileID: 877931251851520929, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -487,6 +532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Examples
+      objectReference: {fileID: 0}
+    - target: {fileID: 877931251875757615, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
+        type: 3}
+      propertyPath: m_Text
+      value: Druha uroven
       objectReference: {fileID: 0}
     - target: {fileID: 3550831226672892067, guid: 190c1eee6fc73b54a8e43f0367c1bee0,
         type: 3}
